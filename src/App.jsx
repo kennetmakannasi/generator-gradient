@@ -3,41 +3,42 @@ import react, { useState } from "react";
 function App() {
       const[w1,setW1]=useState("blue");
       const[ws1,setShade1]=useState("100");
-      const[act,setAct]=useState("");
-      const[opsi,setOption]=useState("t")
       const[w2,setW2]=useState("red");
       const[ws2,setShade2]=useState("500");   
       const[w3,setW3]=useState("green");
-      const[ws3,setShade3]=useState("500");   
+      const[ws3,setShade3]=useState("500");  
+
+      const[act,setAct]=useState("");
+      const[opsi,setOption]=useState("t");
 
       function c1(event){
           setW1(event.target.value);
       }
-      function active(event){
-          setAct(event.target.value);
-      }
-
       function cs1(event){
           setShade1(event.target.value);
       }
 
-      function pilihopsi(event){
-          setOption(event.target.value)
-      }
-
+      
       function cs2(event){
         setShade2(event.target.value);
-    }
-
+      }
       function c2(event){
         setW2(event.target.value);
       }
+
       function c3(event){
         setW3(event.target.value);
       }
       function cs3(event){
         setShade3(event.target.value);
-    }
+      }
+
+      function active(event){
+          setAct(event.target.value);
+      }
+      function pilihopsi(event){
+        setOption(event.target.value)
+      }
 
       $(document).ready(function(){
         if(act=="act"){
@@ -63,14 +64,16 @@ function App() {
 
       function copy(){
         const textToCopy = document.getElementById('output').innerText;
-            navigator.clipboard.writeText(textToCopy)
+        navigator.clipboard.writeText(textToCopy)
 
-            Swal.fire({title:"Gradient berhasil di copy",
-              confirmButtonColor: "#22d3ee",
-              color: "black",
-            });
+        Swal.fire({
+          title:"Gradient berhasil di copy",
+          confirmButtonColor: "#22d3ee",
+          color: "black",
+        });
 
       }
+
   return (
     <>
     <div>
